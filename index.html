@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/styles_first_block.css">
+    <link rel="stylesheet" href="styles/styles_second_block.css">
+    <link rel="stylesheet" href="styles/styles_third_blick.css">
+    <link rel="stylesheet" href="styles/styles_fourth_block.css">
+    <link rel="stylesheet" href="styles/styles_five_block.css">
+    <link rel="stylesheet" href="styles/styles_six_block.css">
+    <link rel="stylesheet" href="styles/styles_seven_block.css">
+    <link rel="stylesheet" href="styles/styles_eich_block.css">
+    <link rel="stylesheet" href="styles/styles_eich_foto.css">
+    <title>Свадьба Даниила и Дарьи</title>
+    <script src="javaskripts.js"></script>
+    <script src="google_sheets_script.js"></script>
+</head>
+<body>
+
+    <video autoplay muted loop playsinline id="background-video" poster="image/poster_fon.jpeg">
+        <source src="video/video_fon_354.mp4" type="video/mp4">
+        <source src="video/video_fon_354.webm" type="video/webm">
+    </video>
+
+     <!-- ПЕРВИЧНЫЙ БЛОК (прелоадер) -->
+    <div id="intro-overlay">
+        <div class="intro-content">
+            <h1 class="intro-title">Вам пришло</h1>
+            <img class="intro-subtitle" src="image/Priglashenie_white.png">
+            <!-- КНОПКА-СЕРДЕЧКО (SVG версия) -->
+            <div id="enter-button" class="heart-button">
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.54L12 21.35Z" 
+                        fill="url(#heartGradient)" stroke="none"/>
+                    <defs>
+                        <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#bd1c1c;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8a1818;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div> 
+            
+            <div class="intro-p"> 
+                <p class="click-text">нажмите на сердечко что бы продолжить</p>
+            </div>
+        </div> 
+    </div>   
+
+    <div class="glavnaya">
+        <!-- Первый блок, wedding day -->
+        <div class="first_block">
+            <div class="card_first">
+                <!-- Блок даты 18 | 07 | 2026 -->
+                <div class="date-block">
+                    <div class="date-numbers">
+                        <img class="img_date" src="image/PriglosNaSvad (1).png">
+                    </div>
+                </div>
+                <!-- Имена: ДАНИНА ДАРЬЯ -->
+                <div class="names">
+                    <img class="nameDanDar" src="image/DaniilAndDaria.png">
+                    <!-- <h1>ДАНИИЛ &<br>ДАРЬЯ</h1> -->
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Второй блок, Дорогие гости -->
+        <div class="second_block">
+            <div class="dear_guests-card">
+                
+                <div class="card_img_dear">
+                    <img class="img_dear_guests" src="image/dear_guests_FFFDF8 (1).png">
+                </div>
+                <div class="content_text">
+                    <span>С радостью и трепетом в сердце приглашаем вас разделить 
+                        с нами важный и счастливый день — день нашей свадьбы!</span>
+                </div>
+                <hr class="content_line">
+            </div>
+        </div>
+        
+        <!-- Третий блок, календарь, до свадьбы осталось -->
+        <div class="third_block">
+            <div class="dear_guests-card">
+                <div class="card_img_jule">
+                    <img class="img_jule" src="image/Jule (1).png">
+                </div>
+                <div class="card_img_calendar">
+                    <img class="img_calendar" src="image/kalendar_date.png">
+                </div>
+                <div class="timer_text">
+                    <span>До свадьбы осталось...</span>
+                </div>
+                <div class="timer-container">
+                    <div class="timer-item">
+                        <svg class="timer-svg" viewBox="0 0 100 100">
+                            <circle class="timer-bg" cx="50" cy="50" r="45" />
+                            <circle class="timer-progress" id="days-progress" cx="50" cy="50" r="45" />
+                        </svg>
+                        <span class="timer-value" id="days">00</span>
+                        <span class="timer-label">Дней</span>
+                    </div>
+                    
+                    <div class="timer-item">
+                        <svg class="timer-svg" viewBox="0 0 100 100">
+                            <circle class="timer-bg" cx="50" cy="50" r="45" />
+                            <circle class="timer-progress" id="hours-progress" cx="50" cy="50" r="45" />
+                        </svg>
+                        <span class="timer-value" id="hours">00</span>
+                        <span class="timer-label">Часов</span>
+                    </div>
+                    
+                    <div class="timer-item">
+                        <svg class="timer-svg" viewBox="0 0 100 100">
+                            <circle class="timer-bg" cx="50" cy="50" r="45" />
+                            <circle class="timer-progress" id="minutes-progress" cx="50" cy="50" r="45" />
+                        </svg>
+                        <span class="timer-value" id="minutes">00</span>
+                        <span class="timer-label">Минут</span>
+                    </div>
+                    
+                    <div class="timer-item">
+                        <svg class="timer-svg" viewBox="0 0 100 100">
+                            <circle class="timer-bg" cx="50" cy="50" r="45" />
+                            <circle class="timer-progress" id="seconds-progress" cx="50" cy="50" r="45" />
+                        </svg>
+                        <span class="timer-value" id="seconds">00</span>
+                        <span class="timer-label">Секунд</span>
+                    </div>
+                </div>
+                <hr class="content_line">
+            </div>
+        </div>
+
+        <!-- Четвертый блок, место торжества -->
+        <div class="fourd_block">
+            <div class="card_four">
+                <div class="card_img_location_torgestva">
+                    <img class="img_location_torgestva" src="image/Mesto_torgestva.png">
+                </div>
+                <div class="card_img_location">
+                    <div class="content_text_card">
+                        <div class="content_text_four">
+                            <span>Будем ждать вас на нашей свадьбе</span>
+                        </div>
+                        <div class="content_text_four_2">
+                            <span>Ресторан "Lesnik" г. Бугульма ул. Вл. Ленина 152А</span>
+                        </div>
+                    </div>
+                </div>
+                <hr class="content_line">
+                <div class="div_for_button">
+                    <button class="button_yandex_maps" id="toggleMapBtn">Карта
+                        <img class="img_arrow" id="img_arrow_id" src="image/arrow_arrows_back.svg">
+                    </button>
+                </div>
+
+                <!-- Контейнер для карты с анимацией -->
+                <div class="maps_location_wrapper" id="mapsWrapper">
+                    <div class="maps_location" id="mapsLocation">
+                        <script type="text/javascript" charset="utf-8" async 
+                            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A02732c871ca487d24cc754ae33f17642a03dbee575c12bbe1c0e14747d1bf79b&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true">
+                        </script>
+                    </div>
+                </div>
+                <!-- Скрипт для открытия карты -->
+                <script>
+                    (function() {
+                        const toggleBtn = document.getElementById('toggleMapBtn');
+                        const wrapper = document.getElementById('mapsWrapper');
+                        const img_arrow_const = document.getElementById('img_arrow_id');
+                        let isOpen = false;
+                        
+                        function toggleMap() {
+                            if (isOpen) {
+                                // Закрываем карту
+                                wrapper.classList.remove('open'); 
+                                img_arrow_const.style.transform = 'rotate(0deg)'; 
+                                // или можно оставить "Карта", но добавить иконку
+                                img_arrow_const.style.transition = 'transform 0.5s ease-in'
+                                isOpen = false;
+                            } else {
+                                // Открываем карту
+                                wrapper.classList.add('open');
+                                img_arrow_const.style.transform = 'rotate(180deg)';
+                                img_arrow_const.style.transition = 'transform 0.5s ease-in'
+                                isOpen = true;
+                            }
+                        }
+                        
+                        toggleBtn.addEventListener('click', toggleMap);
+                    })();
+                </script>
+
+            </div>
+        </div> 
+
+        <!-- Пятый блок, Программа дня -->
+        <div class="five_block">
+            <div class="card_four">
+                <div class="card_img_location_torgestva">
+                    <img class="img_location_torgestva" src="image/Program_day (2).png">
+                </div>
+                <div class="card_our_day">
+                    <span>Наш день будет наполнен любовью, радостью и
+                        тёплыми моментами. Ниже — программа торжества, 
+                        чтобы вы могли быть частью каждого из них.
+                    </span>
+                </div>
+                <div class="card_for_programm_day1">
+                    <div class="card_for_el" > <!-- flex -->
+                        <div class="el_time">
+                            <img class="img_time" src="image/16_00.png">
+                        </div>
+                        <div class="vertical_line"></div>
+                        <div class="container_for_text">
+                            <img class="img_text_program" src="image/Sbor_guests.png">
+                            <p class="text_program_day">Захватите с собой 
+                                хорошее настроение и свои улыбки</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_for_programm_day2">
+                    <div class="card_for_el"> <!-- flex -->
+                        <div class="el_time">
+                            <img class="img_time" src="image/17_00.png">
+                        </div>
+                        <div class="vertical_line"></div>
+                        <div class="container_for_text">
+                            <img class="img_text_program" src="image/Ceremonia.png">
+                            <p class="text_program_day">Вы станете свидетелями
+                                создания нашей семьи
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_for_programm_day3">
+                    <div class="card_for_el"> <!-- flex -->
+                        <div class="el_time">
+                            <img class="img_time" src="image/18_00.png">
+                        </div>
+                        <div class="vertical_line"></div>
+                        <div class="container_for_text">
+                            <img class="img_text_program" src="image/Start_banket (1).png">
+                            <p class="text_program_day">Время вкусной еды, 
+                                танцев, конкурсов и развлечений</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="card_for_programm_day4">
+                    <div class="card_for_el"> <!-- flex -->
+                        <div class="el_time">
+                            <img class="img_time" src="image/23_00.png">
+                        </div>
+                        <div class="vertical_line"></div>
+                        <div class="container_for_text">
+                            <img class="img_text_program" src="image/End_banket (1).png">
+                            <p class="text_program_day">Спасибо что разделили 
+                                с нами этот замечательный день</p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="content_line">
+            </div>
+        </div> 
+
+        <!-- Шестой блок, детали -->
+        <div class="six_block">
+            <div class="card_four">
+                <div class="card_img_location_torgestva">
+                    <img class="img_location_torgestva" src="image/Detailes (2).png">
+                </div>
+                <div class="div_for_img_heart">
+                    <img class="img_heart_icon" src="image/heart_icon.svg">
+                </div>
+                <div class="content_text_detailes">
+                    <p>МЫ НЕ ХОТИМ ОБРЕМЕНЯТЬ ВАС ВЫБОРОМ ПОДАРКА, 
+                        ПОЭТОМУ БУДЕМ РАДЫ ВКЛАДУ В БЮДЖЕТ НАШЕЙ 
+                        МОЛОДОЙ СЕМЬИ</p>
+                </div>
+                <hr class="content_line">
+            </div>
+        </div> 
+
+        <!-- Седьмой блок, Дресс-код -->
+        <div class="seven_block">
+            <div class="card_four">
+                <div class="card_img_location_torgestva">
+                    <img class="img_location_torgestva" src="image/Dres_cod.png">
+                </div>
+                <div class="content_text_for_dres_cod">
+                    <p>МЫ ОЧЕНЬ СТАРАЛИСЬ СДЕЛАТЬ НАШ ПРАЗДНИК КРАСИВЫМ 
+                        И БУДЕМ РАДЫ, ЕСЛИ ДАМЫ ОТДАДУТ ПРЕДПОЧТЕНИЕ 
+                        ВЕЧЕРНЕМУ ПЛАТЬЮ И ВОЗДЕРЖАТСЯ ОТ НАРЯДОВ В 
+                        БЕЛОМ ЦВЕТЕ, А ДЖЕНТЛЬМЕНЫ - КЛАССИЧЕСКОМУ 
+                        КОСТЮМУ ИЛИ СМОКИНГУ.</p>
+                </div>
+                <div class="content_text_for_dres_cod">
+                    <p>ВЫ БУДЕТЕ НАСТОЯЩИМ УКРАШЕНИЕМ ВЕЧЕРА, ЕСЛИ 
+                        ПОДДЕРЖИТЕ СЛЕДУЮЩУЮ ЦВЕТОВУЮ ПАЛИТРУ:</p>
+                </div>
+                <div class="div_for_img_dams_mans">
+                    <img class="img_dams" src="image/Dams.png">
+                </div>
+                <div class="container_for_palitra">
+                    <img src="image_palitra/ping.jpg" class="img_palitra">
+                    <img src="image_palitra/korichnev.jpg" class="img_palitra">
+                    <img src="image_palitra/red.jpg" class="img_palitra">
+                    <img src="image_palitra/beegeviy.jpg" class="img_palitra">
+                    <img src="image_palitra/goluboy.jpg" class="img_palitra">
+                </div>
+                <div class="text_posle_palitra">
+                    <p>Основные цвета: светло розовый, коричневый, 
+                        темно-красный, бежевый, светло голубой</p>
+                </div>
+                <div class="div_for_img_dams_mans">
+                    <img class="img_mans" src="image/Gentelmans.png">
+                </div>
+                <div class="container_for_palitra">
+                    <img src="image_palitra/black.jpg" class="img_palitra">
+                    <img src="image_palitra/korichnev.jpg" class="img_palitra">
+                    <img src="image_palitra/beegeviy.jpg" class="img_palitra">
+                    <img src="image_palitra/gray.jpg" class="img_palitra">
+                </div>
+                <div class="text_posle_palitra">
+                    <p>Основные цвета: черный, коричневый, 
+                        бежевый, серый</p>
+                </div>
+            </div>
+        </div> 
+
+        <!-- Восьмой блок, анкета и контакты -->
+        <div class="eich_block">
+            <div class="wrapper_form">
+                <div class="card_for_img_anketa">
+                    <img class="img_anketa" src="image/Anketa1.png">
+                </div>
+                <!-- Поле: Ваше имя -->
+                <div class="field-group">
+                    <div class="input-name-wrapper">
+                        <input type="text" class="name-input" id="userName" placeholder="Ваше имя и фамилия" autocomplete="off">
+                    </div>
+                </div>
+
+                <!-- Блок "Будете ли вы присутствовать на свадьбе" - ТЕПЕРЬ РАДИОКНОПКИ -->
+                <div class="field-group">
+                    <span class="checkbox-label-title">Будете ли вы присутствовать на свадьбе?</span>
+                    <div class="radio-group">
+                        <label class="radio-item">
+                            <input type="radio" name="attendance" value="yes" id="attendanceYes"> 
+                            <span>Да, буду</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="attendance" value="no" id="attendanceNo"> 
+                            <span>Нет, не смогу</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Легкий визуальный разделитель (опционально) -->
+                <div class="divider-light"></div>
+
+                <!-- Блок "Выберите напитки которые будете пить" (чекбоксы) -->
+                <div class="field-group drinks-section">
+                    <span class="checkbox-label-title">Выберите напитки, которые будете пить</span>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="drink" value="cognac" id="drinkCognac"> 
+                            <span>КОНЬЯК</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="drink" value="samogon" id="drinkSamogon"> 
+                            <span>САМОГОН</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="drink" value="whiskey" id="drinkWhiskey"> 
+                            <span>ВИСКИ</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="drink" value="champagne" id="drinkChampagne"> 
+                            <span>ШАМПАНСКОЕ</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="drink" value="wine" id="drinkWine"> 
+                            <span>ВИНО</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="drink" value="water" id="drinkWater"> 
+                            <span>ВОДУ</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Кнопка отправить (без js функционала) -->
+                <div class="submit-btn-wrapper">
+                    <button class="submit-btn" type="button" id="submitBtn">ОТПРАВИТЬ</button>
+                </div>
+            </div>
+        </div> 
+
+        <!-- Восьмой блок, продолжение, фотки-->
+        <div class="slider-section">
+            <span>Посмотрите на нас счастливых</span>
+            <!-- Контейнер слайдера -->
+            <div class="slider-container">
+                
+                <!-- Карточки (Замени src на свои картинки) -->
+                <div class="slide" id="slide-1">
+                    <img src="image/foto_1.jpg" alt="Фото 1" class="img_foto">
+                </div>
+                <div class="slide" id="slide-2">
+                    <img src="image/foto_2.jpg" alt="Фото 2" class="img_foto">
+                </div>
+                <div class="slide" id="slide-3">
+                    <img src="image/foto_3.jpg" alt="Фото 3" class="img_foto">
+                </div>
+                <div class="slide" id="slide-4">
+                    <img src="image/foto_4.jpg" alt="Фото 3" class="img_foto">
+                </div>
+                
+                <!-- Стрелки -->
+                <button class="nav-btn prev-btn">❮</button>
+                <button class="nav-btn next-btn">❯</button>
+                
+                <!-- Точки пагинации -->
+                <div class="dots-container">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Девятый блок, Контакты -->
+        <div class="kontacts_block">
+            <div class="card_four">
+                <div class="card_img_location_torgestva">
+                    <img class="img_location_torgestva" src="image/Kontact.png">
+                </div>
+                <div class="div_for_img_heart">
+                    <img class="img_heart_icon" src="image/heart_icon.svg">
+                </div>
+                <div class="content_text_detailes">
+                    <p>Если вы хотите сделать для нас
+                        сюрприз или уточнить детали
+                        торжества, свяжитесь, пожалуйста,
+                        с нашим организатором</p>
+                </div>
+                <div class="content_text_detailes">
+                    <p>Светлана - +7 (981) 886-12-70</p>
+                </div>
+            </div>
+        </div> 
+
+
+    </div>
+
+    <!-- АУДИО ЭЛЕМЕНТ (скрытый) -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="audio/Billie_Eilish.mp3" type="audio/mpeg">
+        <source src="audio/Billie_Eilish.ogg" type="audio/ogg">
+    </audio>
+    
+    <!-- <div class="block_1">
+        <div class="image_container_1">
+            <img class="image_block_1" src="image/image_1.png">
+            <div class="text_overlay_1">
+                <p>18|07|2026</p>
+            </div>
+        </div>
+    </div> -->
+    <script>
+        console.log('🚀 СКРИПТ ЗАГРУЗИЛСЯ!');   
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        
+        let currentIndex = 1; // Начинаем со 2-го слайда (индекс 1) как с центрального
+
+        function updateSlider() {
+            // 1. Убираем все старые классы у слайдов и точек
+            slides.forEach(slide => slide.classList.remove('active', 'prev', 'next'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            // 2. Вычисляем индексы
+            let prevIndex = currentIndex - 1;
+            let nextIndex = currentIndex + 1;
+
+            if (prevIndex < 0) prevIndex = slides.length - 1;
+            if (nextIndex >= slides.length) nextIndex = 0;
+
+            // 3. Сразу добавляем классы prev и next (они НЕ вызывают резких скачков)
+            slides[prevIndex].classList.add('prev');
+            slides[nextIndex].classList.add('next');
+
+            // 4. АКТИВАЦИЯ С ЗАДЕРЖКОЙ В 1мс (Приём для плавности)
+            // Браузер сначала отрисует 'prev' и 'next', а потом плавно добавит 'active'
+            setTimeout(() => {
+                slides[currentIndex].classList.add('active');
+                dots[currentIndex].classList.add('active');
+            }, 100);
+        }
+
+        // Слушатели событий для кнопок
+        nextBtn.addEventListener('click', () => {
+            currentIndex++;
+            if (currentIndex >= slides.length) currentIndex = 0;
+            updateSlider();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex--;
+            if (currentIndex < 0) currentIndex = slides.length - 1;
+            updateSlider();
+        });
+
+        // Запускаем отображение при загрузке
+        updateSlider();
+
+
+        // ===== АНИМАЦИЯ ПРИ СКРОЛЛЕ: 5-й блок =====
+        console.log('🚀 СКРИПТ ЗАГРУЗИЛСЯ!');
+        document.addEventListener('DOMContentLoaded', () => {
+            const programBlock = document.querySelector('.five_block');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        console.log('🎬 .five_block появился в области видимости!');
+                        programBlock.classList.add('animate-in');
+                        
+                        // Проверка: добавился ли класс?
+                        setTimeout(() => {
+                            if (programBlock.classList.contains('animate-in')) {
+                                console.log('✨ Класс animate-in успешно добавлен');
+                            }
+                        }, 100);
+                        
+                        observer.unobserve(programBlock); // Анимация только один раз
+                    }
+                });
+            }, { 
+                threshold: 0.15, // Сработает, когда 15% блока видно
+                rootMargin: '0px 0px -100px 0px' // Чуть раньше, чтобы пользователь уже видел начало
+            });
+
+            observer.observe(programBlock);
+        });
+    </script>
+</body>
+</html>
