@@ -122,6 +122,55 @@
     white-space: nowrap;
 }
 
+.card_img_jule {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform; 
+}
+
+.card_img_calendar {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform; 
+}
+
+/* Начальное состояние элементов (скрыты и смещены вниз) */
+.timer_text, .timer-container {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform; 
+}
+
+/* Состояние при добавлении класса .animate-in */
+.third_block.animate-in .card_img_jule,
+.third_block.animate-in .card_img_calendar,
+.third_block.animate-in .timer_text,
+.third_block.animate-in .timer-container  {
+    opacity: 1;
+    transform: translateY(0);
+} 
+
+/* Поочередные задержки для каждого элемента */
+/* Ряд 1 */
+.third_block.animate-in .card_img_jule { 
+    transition-delay: 1s; 
+}
+.third_block.animate-in .card_img_calendar { 
+    transition-delay: 1.3s; 
+}
+.third_block.animate-in .timer_text { 
+    transition-delay: 1.5s; 
+}
+.third_block.animate-in .timer-container { 
+    transition-delay: 1.8s; 
+}
+
 /*  Десктопная версия — немного другой максимальный размер, но остаётся воздушной */
 @media (max-width: 1300px) {
 

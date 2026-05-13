@@ -23,6 +23,14 @@
 
 } 
 
+.card_img_location_torgestva_detailes {
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    margin-bottom: 40px;
+}
+
 .div_for_img_heart {
     display: flex;
     justify-content: center;
@@ -48,6 +56,46 @@
     padding: 0 0 0 20px;
 }
 
+
+.card_img_location_torgestva_detailes {
+    opacity: 0;
+    transform: translateX(-150px);
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform; 
+}
+
+/* Начальное состояние элементов (скрыты и смещены вниз) */
+.div_for_img_heart, .content_text_detailes {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform; 
+}
+
+/* Состояние при добавлении класса .animate-in */
+.six_block.animate-in .card_img_location_torgestva_detailes,
+.six_block.animate-in .div_for_img_heart,
+.six_block.animate-in .content_text_detailes {
+    opacity: 1;
+    transform: translateY(0);
+} 
+
+/* Поочередные задержки для каждого элемента */
+/* Ряд 1 */
+.six_block.animate-in .card_img_location_torgestva_detailes { 
+    transition-delay: 1s; 
+}
+.six_block.animate-in .div_for_img_heart { 
+    transition-delay: 1.2s; 
+}
+.six_block.animate-in .content_text_detailes { 
+    transition-delay: 1.4s; 
+}
+
+
+
 /*  Десктопная версия — немного другой максимальный размер, но остаётся воздушной */
 @media (max-width: 768px) {
 
@@ -59,6 +107,10 @@
         width: 360px;
         font-size: 14px;
         padding: 0 0 0 15px;
+    }
+
+    .card_img_location_torgestva {
+        width: 400px;
     }
     
 } 
@@ -75,6 +127,10 @@
         font-size: 12px;
         padding: 0 0 0 5px;
         line-height: 20px;
+    }
+
+    .card_img_location_torgestva {
+        width: 350px;
     }
     
 }

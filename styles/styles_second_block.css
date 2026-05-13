@@ -80,6 +80,30 @@
     z-index: -1;
 }
 
+/* Начальное состояние элементов (скрыты и смещены вниз) */
+.card_img_dear, .content_text {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.5s ease, 
+                transform 0.5s ease-in;
+    will-change: opacity, transform; 
+}
+
+/* Состояние при добавлении класса .animate-in */
+.second_block.animate-in .card_img_dear,
+.second_block.animate-in .content_text {
+    opacity: 1;
+    transform: translateY(0);
+} 
+
+.second_block.animate-in .card_img_dear {
+    transition-delay: 0.3s;
+} 
+
+.second_block.animate-in .content_text {
+    transition-delay: 0.5s;
+} 
+
 .content_text span {
     font-family: Angst;
     font-size: 25px;

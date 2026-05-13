@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const drinkWhiskey = document.getElementById('drinkWhiskey');
     const drinkChampagne = document.getElementById('drinkChampagne');
     const drinkWine = document.getElementById('drinkWine');
-    const drinkWater = document.getElementById('drinkWater');
+    const drinkWater = document.getElementById('drinkWater'); 
+    const drinkGaz = document.getElementById('drinkGaz'); 
     
     // Проверяем, найдены ли все элементы
     if (!userNameInput) console.error('Элемент userName не найден');
@@ -42,12 +43,13 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Собираем выбранные напитки
         const drinks = [];
-        if (drinkCognac && drinkCognac.checked) drinks.push('Коньяк');
-        if (drinkSamogon && drinkSamogon.checked) drinks.push('Самогон');
-        if (drinkWhiskey && drinkWhiskey.checked) drinks.push('Виски');
+        if (drinkCognac && drinkCognac.checked) drinks.push('Вино красное полусладкое');
+        if (drinkSamogon && drinkSamogon.checked) drinks.push('Вино белое полусладкое');
+        if (drinkWhiskey && drinkWhiskey.checked) drinks.push('Вино белое сухое');
         if (drinkChampagne && drinkChampagne.checked) drinks.push('Шампанское');
-        if (drinkWine && drinkWine.checked) drinks.push('Вино');
-        if (drinkWater && drinkWater.checked) drinks.push('Воду');
+        if (drinkWine && drinkWine.checked) drinks.push('Водка');
+        if (drinkWater && drinkWater.checked) drinks.push('Самогон');
+        if (drinkGaz && drinkGaz.checked) drinks.push('Сок/Газировка');
         
         return { name, attendance, drinks };
     }
@@ -94,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (drinkChampagne) drinkChampagne.checked = false;
         if (drinkWine) drinkWine.checked = false;
         if (drinkWater) drinkWater.checked = false;
+        if (drinkGaz) drinkGaz.checked = false;
     }
     
     // Главная функция отправки

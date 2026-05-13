@@ -47,6 +47,47 @@
 
 }  
 
+.card_img_location_torgestva_dress {
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    margin-bottom: 40px;
+}
+
+.card_img_location_torgestva_dress {
+    opacity: 0;
+    transform: translateX(-150px);
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform; 
+}
+
+/* Начальное состояние элементов (скрыты и смещены вниз) */
+.content_text_for_dres_cod {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform; 
+}
+
+/* Состояние при добавлении класса .animate-in */
+.seven_block.animate-in .card_img_location_torgestva_dress,
+.seven_block.animate-in .content_text_for_dres_cod {
+    opacity: 1;
+    transform: translateY(0);
+} 
+
+/* Поочередные задержки для каждого элемента */
+/* Ряд 1 */
+.seven_block.animate-in .card_img_location_torgestva_dress { 
+    transition-delay: 1s; 
+}
+.seven_block.animate-in .content_text_for_dres_cod { 
+    transition-delay: 1.2s; 
+}
+
 .container_for_palitra {
     position: relative;
     display: flex;
@@ -143,6 +184,10 @@
         width: 200px;
         font-size: 10px;
     }
+
+    .card_img_location_torgestva_dress {
+        width: 400px;
+    }
     
 } 
 
@@ -164,6 +209,10 @@
 
     .img_mans {
         width: 190px;
+    }
+
+    .card_img_location_torgestva_dress {
+        width: 350px;
     }
     
 }

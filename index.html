@@ -24,12 +24,12 @@
         <source src="video/video_fon_354.webm" type="video/webm">
     </video>
 
-     <!-- ПЕРВИЧНЫЙ БЛОК (прелоадер) -->
+     <!-- ПЕРВИЧНЫЙ БЛОК (прелоадер) ->
     <div id="intro-overlay">
         <div class="intro-content">
             <h1 class="intro-title">Вам пришло</h1>
             <img class="intro-subtitle" src="image/Priglashenie_white.png">
-            <!-- КНОПКА-СЕРДЕЧКО (SVG версия) -->
+            <!- КНОПКА-СЕРДЕЧКО (SVG версия) ->
             <div id="enter-button" class="heart-button">
                 <svg class="heart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.54L12 21.35Z" 
@@ -47,7 +47,7 @@
                 <p class="click-text">нажмите на сердечко что бы продолжить</p>
             </div>
         </div> 
-    </div>   
+    </div>   -->
 
     <div class="glavnaya">
         <!-- Первый блок, wedding day -->
@@ -272,7 +272,7 @@
         <!-- Шестой блок, детали -->
         <div class="six_block">
             <div class="card_four">
-                <div class="card_img_location_torgestva">
+                <div class="card_img_location_torgestva_detailes">
                     <img class="img_location_torgestva" src="image/Detailes (2).png">
                 </div>
                 <div class="div_for_img_heart">
@@ -290,7 +290,7 @@
         <!-- Седьмой блок, Дресс-код -->
         <div class="seven_block">
             <div class="card_four">
-                <div class="card_img_location_torgestva">
+                <div class="card_img_location_torgestva_dress">
                     <img class="img_location_torgestva" src="image/Dres_cod.png">
                 </div>
                 <div class="content_text_for_dres_cod">
@@ -334,7 +334,7 @@
             </div>
         </div> 
 
-        <!-- Восьмой блок, анкета и контакты -->
+        <!-- Восьмой блок, анкета -->
         <div class="eich_block">
             <div class="wrapper_form">
                 <div class="card_for_img_anketa">
@@ -371,27 +371,31 @@
                     <div class="checkbox-group">
                         <label class="checkbox-item">
                             <input type="checkbox" name="drink" value="cognac" id="drinkCognac"> 
-                            <span>КОНЬЯК</span>
+                            <span>Вино красное полусладкое</span>
                         </label>
                         <label class="checkbox-item">
                             <input type="checkbox" name="drink" value="samogon" id="drinkSamogon"> 
-                            <span>САМОГОН</span>
+                            <span>вино белое полусладкое</span>
                         </label>
                         <label class="checkbox-item">
                             <input type="checkbox" name="drink" value="whiskey" id="drinkWhiskey"> 
-                            <span>ВИСКИ</span>
+                            <span>вино белое сухое</span>
                         </label>
                         <label class="checkbox-item">
                             <input type="checkbox" name="drink" value="champagne" id="drinkChampagne"> 
-                            <span>ШАМПАНСКОЕ</span>
+                            <span>шампанское</span>
                         </label>
                         <label class="checkbox-item">
                             <input type="checkbox" name="drink" value="wine" id="drinkWine"> 
-                            <span>ВИНО</span>
+                            <span>водка</span>
                         </label>
                         <label class="checkbox-item">
                             <input type="checkbox" name="drink" value="water" id="drinkWater"> 
-                            <span>ВОДУ</span>
+                            <span>самогон</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="drink" value="water" id="drinkGaz"> 
+                            <span>сок/газировка</span>
                         </label>
                     </div>
                 </div>
@@ -447,13 +451,13 @@
                 <div class="div_for_img_heart">
                     <img class="img_heart_icon" src="image/heart_icon.svg">
                 </div>
-                <div class="content_text_detailes">
+                <div class="content_text_detailes_contact">
                     <p>Если вы хотите сделать для нас
                         сюрприз или уточнить детали
                         торжества, свяжитесь, пожалуйста,
                         с нашим организатором</p>
                 </div>
-                <div class="content_text_detailes">
+                <div class="content_text_detailes_contact">
                     <p>Светлана - +7 (981) 886-12-70</p>
                 </div>
             </div>
@@ -530,29 +534,34 @@
         console.log('🚀 СКРИПТ ЗАГРУЗИЛСЯ!');
         document.addEventListener('DOMContentLoaded', () => {
             const programBlock = document.querySelector('.five_block');
+            const programBlockSecond = document.querySelector('.second_block'); 
+            const programBlockThird = document.querySelector('.third_block'); 
+            const programBlockSix = document.querySelector('.six_block');  
+            const programBlockSeven = document.querySelector('.seven_block'); 
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        console.log('🎬 .five_block появился в области видимости!');
-                        programBlock.classList.add('animate-in');
-                        
-                        // Проверка: добавился ли класс?
-                        setTimeout(() => {
-                            if (programBlock.classList.contains('animate-in')) {
-                                console.log('✨ Класс animate-in успешно добавлен');
-                            }
-                        }, 100);
-                        
-                        observer.unobserve(programBlock); // Анимация только один раз
-                    }
+            function MyObServerFunction(blockProg) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            blockProg.classList.add('animate-in');
+                            
+                            observer.unobserve(blockProg); // Анимация только один раз
+                        }
+                    });
+                }, { 
+                    threshold: 0.15, // Сработает, когда 15% блока видно
+                    rootMargin: '0px 0px -100px 0px' // Чуть раньше, чтобы пользователь уже видел начало
                 });
-            }, { 
-                threshold: 0.15, // Сработает, когда 15% блока видно
-                rootMargin: '0px 0px -100px 0px' // Чуть раньше, чтобы пользователь уже видел начало
-            });
 
-            observer.observe(programBlock);
+                observer.observe(blockProg);
+            }
+
+            MyObServerFunction(programBlock);
+            MyObServerFunction(programBlockSecond);
+            MyObServerFunction(programBlockThird);
+            MyObServerFunction(programBlockSix);
+            MyObServerFunction(programBlockSeven);
+            
         });
     </script>
 </body>
