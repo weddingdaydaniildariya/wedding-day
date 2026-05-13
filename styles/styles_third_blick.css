@@ -1,0 +1,231 @@
+.third_block {
+    /* background-color: rgba(165, 42, 42, 0.815); */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 0px 30px 30px 30px;
+
+}
+
+.third_block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--global_backcolor);
+    mask: radial-gradient(circle at 100% 50%, transparent 100px, black 20px);
+    -webkit-mask: radial-gradient(circle at 100% 50%, transparent 100px, black 20px);
+
+} 
+
+.card_img_jule {
+    display: flex;
+    justify-content: center;
+    width: 450px;
+}
+
+.img_jule {
+    width: 55%;
+}
+
+.card_img_calendar {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    width: 450px;
+}
+
+.img_calendar {
+    width: 100%;
+}
+
+.timer_text {
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+    margin-top: 50px;
+    background-color: transparent;
+    z-index: -1;
+}
+
+.timer_text span {
+    font-family: Angst;
+    font-size: 20px;
+    color: #FFFDF8;
+}
+
+.timer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 20px auto;
+}
+
+.timer-item {
+    position: relative;
+    width: 90px;
+    text-align: center;
+}
+
+.timer-svg {
+    width: auto;
+    height: auto;
+    transform: rotate(-90deg);
+}
+
+.timer-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.2);
+    stroke-width: 2;
+}
+
+.timer-progress {
+    fill: none;
+    stroke: #FFFDF8;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 282.6; /* 2 * PI * 45 ≈ 282.6 */
+    stroke-dashoffset: 282.6;
+    transition: stroke-dashoffset 0.3s linear;
+}
+
+.timer-value {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Angst, sans-serif;
+    font-size: 22px;
+    color: #FFFDF8;
+}
+
+.timer-label {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: Angst, sans-serif;
+    font-size: 12px;
+    color: #FFFDF8;
+    opacity: 1;
+    white-space: nowrap;
+}
+
+/*  Десктопная версия — немного другой максимальный размер, но остаётся воздушной */
+@media (max-width: 1300px) {
+
+    .third_block {
+        padding: 0px 0px 45px 0px;
+    }
+} 
+
+/*  Десктопная версия — немного другой максимальный размер, но остаётся воздушной */
+@media (max-width: 768px) {
+
+    .card_img_jule {
+        width: 400px;
+    }
+
+    .card_img_calendar {
+        width: 400px;
+    }
+
+    .timer_text {
+        width: 290px;
+    }
+    .timer_text span {
+        font-size: 20px;
+    }
+    .timer-container {
+        gap: 15px;
+    }
+    .timer-item {
+        width: 80px;
+    }
+    .timer-value {
+        font-size: 20px;
+    }
+    .timer-label {
+        font-size: 10px;
+    }
+
+} 
+
+/* Телефон: уменьшаем внутренние отступы, чтобы контент дышал, но не был слишком прижат  */
+@media (max-width: 480px) {
+
+    .card_img_jule {
+        width: 300px;
+    }
+
+    .card_img_calendar {
+        width: 350px;
+    }
+
+    .timer_text {
+        width: 270px;
+    }
+    .timer_text span {
+        font-size: 18px;
+    }
+    .timer-container {
+        gap: 15px;
+    }
+    .timer-item {
+        width: 70px;
+    }
+    .timer-value {
+        font-size: 18px;
+    }
+    .timer-label {
+        font-size: 10px;
+        bottom: 25%;
+    }
+
+}
+
+/* Телефон: уменьшаем внутренние отступы, чтобы контент дышал, но не был слишком прижат  */
+@media (max-width: 400px) {
+
+    .card_img_jule {
+        width: 270px;
+    }
+
+    .card_img_calendar {
+        width: 270px;
+    }
+
+    .timer_text {
+        width: 230px;
+    }
+
+    .timer_text span {
+        font-size: 16px;
+    }
+
+    .timer-container {
+        gap: 15px;
+    }
+    .timer-item {
+        width: 55px;
+    }
+    .timer-value {
+        font-size: 14px;
+    }
+    .timer-label {
+        font-size: 8px;
+        bottom: 25%;
+    }
+
+}

@@ -1,0 +1,193 @@
+
+
+.content_text_for_dres_cod {
+    width: 500px;
+    margin: 30px auto;
+    text-align: center;
+    color: #FFFDF8;
+    letter-spacing: 1px;
+    line-height: 25px;
+    border-left: 1px #FFFDF8 solid;
+}
+
+.div_for_img_dams_mans {
+    display: flex;
+    justify-content: center;
+}
+
+.img_dams {
+    width: 150px;
+}
+
+.img_mans {
+    width: 300px;
+}
+
+.seven_block {
+    /* background-color: rgba(165, 42, 42, 0.815); */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 30px 0px 0px 0px;
+}
+
+.seven_block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--global_backcolor);
+    mask: radial-gradient(circle at 0% 50%, transparent 90px, black 20px);
+    -webkit-mask: radial-gradient(circle at 0% 50%, transparent 90px, black 20px);
+
+}  
+
+.container_for_palitra {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    gap: 10px;
+    padding: 10px 40px;
+    background: transparent;
+    box-shadow: 0 0 5px white;
+    border-radius: 60px;
+}
+
+.img_palitra {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.text_posle_palitra {
+    width: 250px;
+    display: flex;
+    margin: 20px auto;
+    font-family: Angst;
+    letter-spacing: 1px;
+    font-size: 12px;
+    color: #FFFDF8;
+    line-height: 16px;
+    text-align: center;
+}
+
+/* Элемент выреза */
+/* .cutout {
+    position: relative;
+    margin: 20px;
+    padding: 40px;
+    text-align: center;
+    background: transparent;
+    color: wheat;
+    text-shadow: 0 0 5px black;
+}
+
+/* А теперь через :before у cutout создаём "дырку" в фоне карточки 
+.cutout::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(165, 42, 42, 0.5); /* тот же цвет, что у карточки 
+    z-index: -1;
+    border-radius: 16px;
+    /* и делаем mix-blend-mode, чтобы "вытереть" фон карточки 
+    mix-blend-mode: difference; /* не подходит 
+    box-shadow: 0 0 5px white;
+} */
+
+/* ЛУЧШЕЕ РЕШЕНИЕ ДЛЯ ТЕБЯ — ДВА ФОНА И СВЕТ */
+
+
+
+
+
+/*  Десктопная версия — немного другой максимальный размер, но остаётся воздушной */
+@media (max-width: 768px) {
+
+    .content_text_for_dres_cod {
+        width: 380px;
+        font-size: 10px;
+        
+        line-height: 20px;
+    }
+
+    .img_dams {
+        width: 100px;
+    }
+
+    .img_mans {
+        width: 200px;
+    }
+
+    .container_for_palitra {
+        gap: 8px;
+        padding: 9px 30px;
+    }
+
+    .img_palitra {
+        height: 50px;
+        width: 50px;
+    }
+
+    .text_posle_palitra {
+        width: 200px;
+        font-size: 10px;
+    }
+    
+} 
+
+/* Телефон: уменьшаем внутренние отступы, чтобы контент дышал, но не был слишком прижат  */
+@media (max-width: 480px) {
+
+    .content_text_for_dres_cod {
+        width: 360px;
+        font-size: 10px;
+        margin: 20px auto;
+        padding: 0%;
+        line-height: 15px;
+        padding-left: 10px;
+    }
+
+    .img_dams {
+        width: 90px;
+    }
+
+    .img_mans {
+        width: 190px;
+    }
+    
+}
+
+/* Телефон: уменьшаем внутренние отступы, чтобы контент дышал, но не был слишком прижат  */
+@media (max-width: 400px) {
+
+    .content_text_for_dres_cod {
+        width: 300px;
+    }
+    
+    .container_for_palitra {
+        gap: 8px;
+        padding: 9px 10px;
+    }
+
+    .img_palitra {
+        height: 40px;
+        width: 40px;
+    }
+
+    .text_posle_palitra {
+        width: 170px;
+        font-size: 10px;
+    }
+    
+}

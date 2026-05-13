@@ -1,0 +1,200 @@
+/* ===== СТИЛИ ДЛЯ ПЕРВИЧНОГО БЛОКА ===== ------------------------------------------------------------------------------------ */
+#intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Заблюренный фон */
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    
+    /* Анимация появления */
+    animation: fadeIn 1s ease;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Контент внутри блока */
+.intro-content {
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    animation: slideUp 0.8s ease;
+    
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.intro-title {
+    font-size: 64px;
+    color: #F0F0CC;
+    font-weight: 500;
+    letter-spacing: 4px;
+    font-family: Angst;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.intro-subtitle {
+    width: 700px;
+    margin-bottom: 40px;
+}
+
+/* ===== СТИЛИ ДЛЯ КНОПКИ-СЕРДЕЧКА ===== */
+.heart-button {
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.heart-icon {
+    width: 180px;
+    height: 180px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.3));
+}
+
+/* Анимация при наведении */
+.heart-button:hover .heart-icon {
+    transform: scale(1);
+    filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.4));
+}
+
+/* Анимация при нажатии */
+.heart-button:active .heart-icon {
+    transform: scale(0.88);
+}
+
+/* Анимация биения сердца */
+@keyframes heartbeat {
+    0% {
+        transform: scale(0.96);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.96);
+    }
+}
+
+/* Запускаем анимацию биения бесконечно */
+.heart-icon {
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* Останавливаем анимацию при наведении */
+.heart-button:hover .heart-icon {
+    animation: none;
+}
+
+.intro-p {
+    display: flex;
+    text-align: center;
+    justify-self: center;
+    align-items: center;
+}
+
+/* Текст под сердечком */
+.click-text {
+    color: #F0F0CC;
+    letter-spacing: 4px;
+    font-family: Angst;
+    font-size: 24px;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    margin-top: 30px;
+    animation: fadeInOut 2s infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Анимация исчезновения блока */
+#intro-overlay.fade-out {
+    animation: fadeOut 0.8s ease forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        backdrop-filter: blur(20px);
+    }
+    to {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+        visibility: hidden;
+    }
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+
+    /* Текст под сердечком */
+    .click-text {
+        width: 400px;
+        font-size: 22px;
+    }
+    
+    .intro-title {
+        font-size: 36px;
+    }
+    
+    .intro-subtitle {
+        width: 500px;
+    }
+    
+    .enter-btn {
+        padding: 12px 32px;
+        font-size: 16px;
+    }
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 550px) {
+
+    .intro-title {
+        font-size: 24px;
+    }
+
+    .intro-subtitle {
+        width: 300px;
+    }
+
+    /* Текст под сердечком */
+    .click-text {
+        width: 200px;
+        font-size: 18px;
+    }
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------ */

@@ -1,0 +1,162 @@
+
+.second_block {
+    /* background-color: rgba(165, 42, 42, 0.815); */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 20px;
+    height: auto;
+    width: auto;
+    padding: 30px;
+
+    /* mask: radial-gradient(circle at 5% 50%, transparent 60px, black 20px);
+        /* radial-gradient(circle at calc(100% - 40px) 50px, transparent 20px, black 20px),
+        radial-gradient(circle at 50% calc(100% - 30px), transparent 18px, black 18px); 
+    mask-composite: exclude;
+    -webkit-mask: radial-gradient(circle at 5% 50%, transparent 60px, black 20px);
+    -webkit-mask-composite: source-over, xor; */
+}
+
+.second_block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--global_backcolor);
+    mask: radial-gradient(circle at 0% 0%, transparent 100px, black 20px);
+    -webkit-mask: radial-gradient(circle at 0% 0%, transparent 100px, black 20px);
+
+} 
+
+/* .second_block::after { 
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(255, 255, 255, 0.1); 
+    border-radius: 2rem 0px 0px 0px; 
+    backdrop-filter: blur(1px); 
+    box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1), inset 0px -9px 0px -8px rgba(255, 255, 255, 1); 
+    opacity: 0.6; 
+    z-index: -1; 
+    filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%); 
+} */
+
+/* Внутренний контент с отступами, которые уменьшаются на телефоне */
+.dear_guests-card {
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+    justify-content: center;
+}
+
+.card_img_dear {
+    width: 600px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_dear_guests {
+    width:70%;
+}
+
+.content_text {
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    text-align: center;
+    width: 600px;
+    margin-top: 50px;
+    background-color: transparent;
+    z-index: -1;
+}
+
+.content_text span {
+    font-family: Angst;
+    font-size: 25px;
+    color: #FFFDF8;
+}
+
+.content_line {
+    border: none; /* Убираем стандартную рамку */
+    height: 1px; /* Высота линии */
+    background-color: #FFFDF8; /* Цвет линии */
+    margin-top: 50px;
+}
+
+/*  Десктопная версия — немного другой максимальный размер, но остаётся воздушной */
+@media (max-width: 1300px) {
+
+    .second_block {
+        padding: 0px 0px 45px 0px;
+    }
+} 
+
+/*  Десктопная версия — немного другой максимальный размер, но остаётся воздушной */
+@media (max-width: 768px) {
+
+    .card_img_hearts {
+        width: 500px
+    }
+
+    .card_img_dear {
+        width: 500px;
+    }
+
+    .content_text {
+        width: 500px;
+    }
+
+    .content_text span {
+        font-size: 25px;
+    }
+} 
+
+/* Телефон: уменьшаем внутренние отступы, чтобы контент дышал, но не был слишком прижат  */
+@media (max-width: 480px) {
+
+    .card_img_hearts {
+        width: 400px;
+    }
+
+    .card_img_dear {
+        width: 400px;
+    }
+
+    .content_text {
+        width: 400px;
+    }
+
+    .content_text span {
+        font-size: 20px;
+    }
+}
+
+/* Телефон: уменьшаем внутренние отступы, чтобы контент дышал, но не был слишком прижат  */
+@media (max-width: 400px) {
+    
+    .card_img_hearts {
+        width: 300px;
+    }
+
+    .card_img_dear {
+        width: 300px;
+    }
+
+    .content_text {
+        width: 300px;
+    }
+
+    .content_text span {
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,196 @@
+
+.five_block {
+    /* background-color: rgba(165, 42, 42, 0.815); */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 30px 0px 30px 0px;
+}
+
+.five_block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--global_backcolor);
+    mask: radial-gradient(circle at 10% 0%, transparent 85px, black 20px);
+    -webkit-mask: radial-gradient(circle at 10% 0%, transparent 85px, black 20px);
+
+} 
+
+.card_our_day {
+    width: 400px;
+    border-left: 2px #FFFDF8 solid;
+    border-radius: 10px;
+    padding: 10px;
+    color: #FFFDF8;
+    font-family: Angst;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin: auto;
+} 
+
+.card_for_programm_day {
+    display: flex;
+    margin: 25px auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_for_el {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+
+/* Начальное состояние элементов (скрыты и смещены вниз) */
+.el_time, .img_text_program, .text_program_day, .card_our_day {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform; 
+}
+
+/* Состояние при добавлении класса .animate-in */
+.five_block.animate-in .el_time,
+.five_block.animate-in .img_text_program,
+.five_block.animate-in .text_program_day,
+.five_block.animate-in .card_our_day  {
+    opacity: 1;
+    transform: translateY(0);
+} 
+
+/* Поочередные задержки для каждого элемента */
+/* Ряд 1 */
+.five_block.animate-in .card_our_day { 
+    transition-delay: 0.5s; 
+}
+.five_block.animate-in .card_for_programm_day1 .el_time { 
+    transition-delay: 0.8s; 
+}
+.five_block.animate-in .card_for_programm_day1
+.img_text_program { 
+    transition-delay: 1.0s; 
+}
+.five_block.animate-in .card_for_programm_day1 
+.text_program_day { 
+    transition-delay: 1.2s; 
+}
+
+/* Ряд 2 */
+.five_block.animate-in .card_for_programm_day2 .el_time { 
+    transition-delay: 1.5s; 
+}
+.five_block.animate-in .card_for_programm_day2
+.img_text_program { 
+    transition-delay: 1.7s; 
+}
+.five_block.animate-in .card_for_programm_day2 
+.text_program_day { 
+    transition-delay: 1.9s; 
+}
+
+/* Ряд 3 */
+.five_block.animate-in .card_for_programm_day3 .el_time { 
+    transition-delay: 2.2s; 
+}
+.five_block.animate-in .card_for_programm_day3 
+.img_text_program { 
+    transition-delay: 2.4s; 
+}
+.five_block.animate-in .card_for_programm_day3
+.text_program_day { 
+    transition-delay: 2.6s; 
+}
+
+/* Ряд 4 */
+.five_block.animate-in .card_for_programm_day4 .el_time { 
+    transition-delay: 2.8s; 
+}
+.five_block.animate-in .card_for_programm_day4 
+.img_text_program { 
+    transition-delay: 3.0s; 
+}
+.five_block.animate-in .card_for_programm_day4 
+.text_program_day { 
+    transition-delay: 3.2s; 
+}  
+
+
+
+
+.img_time {
+    width: 80px;
+}
+
+.vertical_line {
+    border-left: 1px solid #FFFDF8; /* Чёрная линия шириной 2 пикселя */
+    height: clamp(50px, 100px, 150px);
+    margin: 0 25px;
+}
+
+.container_for_text {
+
+}
+
+.img_text_program {
+    width: 300px;
+}
+
+.text_program_day {
+    font-size: 12px;
+    font-family: Angst;
+    color: #FFFDF8;
+    letter-spacing: 1px;
+    width: 300px;
+    margin-top: 10px;
+}
+
+/*  Десктопная версия — немного другой максимальный размер, но остаётся воздушной */
+@media (max-width: 768px) {
+
+    .card_our_day {
+        width: 350px;
+        font-size: 12px;
+    }
+
+    .img_time {
+        width: 60px;
+    }
+
+    .img_text_program {
+        width: 170px;
+    }
+
+    .text_program_day {
+        font-size: 10px;
+        width: 200px;
+    }
+} 
+
+/* Телефон: уменьшаем внутренние отступы, чтобы контент дышал, но не был слишком прижат  */
+@media (max-width: 480px) {
+
+    .card_our_day {
+        width: 280px;
+        font-size: 10px;
+    }
+
+    .img_text_program {
+        width: 150px;
+    }
+
+    .text_program_day {
+        font-size: 10px;
+        width: 180px;
+    }
+}

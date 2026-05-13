@@ -1,0 +1,152 @@
+/* Базовые стили */
+
+.slider-section {
+  width: 100%;
+  height: 600px; /* На всю высоту экрана */
+  background: var(--global_backcolor); 
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.slider-section span{
+  color: #FFF8FD;
+  font-family: Angst, serif;
+  justify-content: center;
+  font-size: 16px;
+  align-items: center;
+}
+
+.slider-container {
+  margin: auto;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide {
+  position: absolute;
+  width: 300px;
+  height: 450px;
+
+  will-change: transform, opacity;
+  transition: transform 1.7s ease, opacity 1s ease; 
+
+  opacity: 0;
+  cursor: pointer;
+  filter: brightness(0.7); 
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+} 
+
+/* Активный слайд (по центру) */
+.slide.active {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+  z-index: 10;
+  filter: brightness(1);
+}
+
+/* Слайд слева */
+.slide.prev {
+  transform: translateX(-40%) scale(0.8) rotate(-10deg);
+  opacity: 0.8;
+  z-index: 5;
+}
+
+/* Слайд справа */
+.slide.next {
+  transform: translateX(40%) scale(0.8) rotate(10deg);
+  opacity: 0.8;
+  z-index: 5;
+}
+
+/* Стили кнопок (стрелок) */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(31, 30, 30, 0.5);
+  border: 1px solid white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 20;
+  transition: background 0.3s;
+  color: #FFF8FD;
+}
+
+.nav-btn:hover { background: rgb(51, 51, 51, 0.5); }
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+/* Точки пагинации */
+.dots-container {
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  gap: 10px;
+  z-index: 20;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active { 
+  background: rgba(255,255,255,1); 
+}
+
+/*  Десктопная версия — немного другой максимальный размер, но остаётся воздушной */
+@media (max-width: 768px) {
+
+  .slider-container {
+    width: 80%;
+  }
+
+  .slide {
+    width: 250px;
+    height: 380px;
+  }
+
+
+} 
+
+/* Телефон: уменьшаем внутренние отступы, чтобы контент дышал, но не был слишком прижат  */
+@media (max-width: 480px) {
+
+  .slider-container {
+    width: 90%;
+    height: 90%;
+  }
+
+  .slide {
+    width: 200px;
+    height: 350px;
+  }
+
+  .slider-section {
+    height: 500px;
+  }
+
+}

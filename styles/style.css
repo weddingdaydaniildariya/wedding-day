@@ -1,0 +1,306 @@
+:root { 
+
+    --global_backcolor: rgba(160, 15, 15, 0.7)
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #941810;  /* нежный тёплый фон */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+}
+
+.glavnaya {
+    display: inline-block;
+    justify-content: center;
+}
+
+.first_block {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: auto;
+}
+
+#background-video {
+    width: 100vw; /* Ширина, равная ширине области просмотра */
+    height: 100vh; /* Высота, равная высоте области просмотра */
+    object-fit: cover; /* Автоматически масштабирует видео, сохраняя его пропорции и заполняя экран, при необходимости обрезая края */
+    position: fixed; /* Фиксирует положение видео относительно области просмотра */
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1; /* Размещает видео под остальной контент */
+    image-rendering: crisp-edges;    /* Для лучшего качества */
+    image-rendering: -webkit-optimize-contrast;
+}
+
+/* #background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%) scale(1.02);
+    z-index: -1;
+    object-fit: cover;
+} */
+
+
+/* Основная карточка - полностью адаптивна 
+.wedding-card {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    /*border-radius: 48px;
+    box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.02);
+    overflow: hidden;
+    transition: all 0.2s ease;
+} */
+
+/* Внутренний контент с отступами, которые уменьшаются на телефоне */
+.card_first {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+}
+
+/* Блок с датой, как на твоём скриншоте */
+.date-block {
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.date-numbers {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    margin: 50px auto;
+}
+
+.img_date {
+    width: 100%;
+}
+
+/* .date-numbers span {
+    font-size: 40px;
+    font-family: Angst, serif;
+    color: #525252; /*  #D7D7B5; 
+    font-weight: 540;
+    margin-bottom: 20px;
+}
+
+.slash_angst{
+    font-size: 40px;
+    color: #525252; #D7D7B5; 
+    font-weight: 540;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+} */
+
+/* Слово "wedding day" — деликатно, под датой */
+.wedding-day {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto; 
+    max-width: max-content;
+    width: clamp(80%, 5vw, 90%);
+}
+
+.names {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 150px;
+}
+
+.nameDanDar {
+    width: 350px;
+}
+
+/*  Десктопная версия — немного другой максимальный размер, но остаётся воздушной 
+@media (max-width: 1300px) {
+
+    .first_block {
+        padding: 0px;
+    }
+}  */
+
+
+/*  Десктопная версия — немного другой максимальный размер, но остаётся воздушной */
+@media (max-width: 768px) {
+
+    .wedding-card {
+        max-width: 680px;
+        width: 100%;
+        
+        max-height: 800px;
+        height: 100%;
+    }
+
+    .date-numbers {
+        width: 350px;
+    }
+
+    .names {
+        margin-bottom: 150px;
+    }
+
+    .nameDanDar {
+        text-align: left;
+        width: 340px;
+    }
+} 
+
+/* Телефон: уменьшаем внутренние отступы, чтобы контент дышал, но не был слишком прижат  */
+@media (max-width: 480px) {
+
+    .wedding-card {
+        max-width: 450px;
+        width: 100%;
+        max-height: 800px;
+        height: 80%;
+    }
+
+    .date-numbers {
+        width: 260px;
+    }
+
+    .names {
+        margin-bottom: 150px;
+    }
+
+    .nameDanDar {
+        text-align: left;
+        width: 250px;
+    }
+
+    #background-video {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: translate(-50%, -50%) scale(1);
+        z-index: -1;
+        object-fit: fill;
+    } 
+}
+
+
+/* Для очень маленьких экранов (меньше 360px) ещё мягче сжимаем 
+@media (max-width: 360px) {
+    .content {
+        padding: 1.2rem 1rem;
+    }
+    .date-numbers span, .date-sep {
+        line-height: 1.2;
+    }
+    .names h1 {
+        letter-spacing: 2px;
+    }
+} */
+
+/* лёгкая анимация при наведении для элегантности (на десктопе) 
+.wedding-card {
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
+@media (hover: hover) {
+    .wedding-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 32px 48px -16px rgba(0, 0, 0, 0.2);
+    }
+} */
+
+/* кастомный курсор / выделение текста — для настроения */
+::selection {
+    background: #e9dbc9;
+    color: #3e3529;
+}
+
+/* .block_1 {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+}
+
+.image_block_1 {
+    height: 100%;
+    width: 100%;
+} 
+
+.image_container_1 {
+    background-color: aqua;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+
+}
+
+.text_overlay_1 {
+    position: absolute;
+    top: 10%;
+    transform: translate(-30%, -80%);
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    font-family: Angst;
+    color: #525252;
+    font-size: larger;
+} */
+
+@font-face {
+  font-family: 'Angst';
+  src: url('../fonts/angst/AngstVF.woff') format('woff'),
+  url('../fonts/angst/AngstVF.woff2') format('woff2'),
+  url('../fonts/angst/AngstVF.ttf') format('ttf'),
+  url('../fonts/angst/static/Angst-Normal.woff') format('woff'), 
+  url('../fonts/angst/static/Angst-Normal.woff2') format('woff2'),
+  url('../fonts/angst/static/Angst-NormalSerif.woff') format('woff'),
+  url('../fonts/angst/static/Angst-NormalSerif.woff2') format('woff2'),
+  url('../fonts/angst/static/Angst-Thin.woff') format('woff'),
+  url('../fonts/angst/static/Angst-Thin.woff2') format('woff2'),
+  url('../fonts/angst/static/Angst-Bold.woff') format('woff'),
+  url('../fonts/angst/static/Angst-Bold.woff2') format('woff2'),
+  url('../fonts/angst/static/Angst-BoldSerif.woff') format('woff'),
+  url('../fonts/angst/static/Angst-BoldSerif.woff2') format('woff2'),
+  url('../fonts/angst/static/Angst-ThinSerif.woff') format('woff'),
+  url('../fonts/angst/static/Angst-ThinSerif.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Angst_2';
+  src: url('../fonts/Angst_Font/Angst-Normal.otf') format('otf'),
+  url('../fonts/Angst_Font/Angst-Bold.otf') format('otf'),
+  url('../fonts/Angst_Font/Angst-BoldSerif.otf') format('otf'),
+  url('../fonts/Angst_Font/Angst-NormalSerif.otf') format('otf'),
+  url('../fonts/Angst_Font/Angst-Thin.otf') format('otf'),
+  url('../fonts/Angst_Font/Angst-ThinSerif.otf') format('otf'),
+  url('../fonts/Angst_Font/AngstVF.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ekaterinavelikayaone';
+  src: url('fonts/Ekaterina_Velikaya_One/ekaterinavelikayaone.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
