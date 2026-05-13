@@ -88,10 +88,10 @@
     transition-delay: 1s; 
 }
 .six_block.animate-in .div_for_img_heart { 
-    transition-delay: 1.2s; 
+    transition-delay: 0.8s; 
 }
 .six_block.animate-in .content_text_detailes { 
-    transition-delay: 1.4s; 
+    transition-delay: 1.0s; 
 }
 
 

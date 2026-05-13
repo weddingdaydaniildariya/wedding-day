@@ -1,7 +1,7 @@
 
 
 
-.content_text_for_dres_cod {
+.content_text_for_dres_cod1, .content_text_for_dres_cod2 {
     width: 500px;
     margin: 30px auto;
     text-align: center;
@@ -65,17 +65,18 @@
 }
 
 /* Начальное состояние элементов (скрыты и смещены вниз) */
-.content_text_for_dres_cod {
+.content_text_for_dres_cod1, .content_text_for_dres_cod2 {
     opacity: 0;
     transform: translateY(40px);
-    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
-                transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: opacity 1.5s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
     will-change: opacity, transform; 
 }
 
 /* Состояние при добавлении класса .animate-in */
 .seven_block.animate-in .card_img_location_torgestva_dress,
-.seven_block.animate-in .content_text_for_dres_cod {
+.seven_block.animate-in .content_text_for_dres_cod1,
+.seven_block.animate-in .content_text_for_dres_cod2 {
     opacity: 1;
     transform: translateY(0);
 } 
@@ -85,8 +86,11 @@
 .seven_block.animate-in .card_img_location_torgestva_dress { 
     transition-delay: 1s; 
 }
-.seven_block.animate-in .content_text_for_dres_cod { 
-    transition-delay: 1.2s; 
+.seven_block.animate-in .content_text_for_dres_cod1 { 
+    transition-delay: 0.8s; 
+}
+.seven_block.animate-in .content_text_for_dres_cod2 { 
+    transition-delay: 1.0s; 
 }
 
 .container_for_palitra {
@@ -195,7 +199,7 @@
 /* Телефон: уменьшаем внутренние отступы, чтобы контент дышал, но не был слишком прижат  */
 @media (max-width: 480px) {
 
-    .content_text_for_dres_cod {
+    .content_text_for_dres_cod1, .content_text_for_dres_cod2 {
         width: 360px;
         font-size: 10px;
         margin: 20px auto;
@@ -221,7 +225,7 @@
 /* Телефон: уменьшаем внутренние отступы, чтобы контент дышал, но не был слишком прижат  */
 @media (max-width: 400px) {
 
-    .content_text_for_dres_cod {
+    .content_text_for_dres_cod1, .content_text_for_dres_cod2 {
         width: 300px;
     }
     

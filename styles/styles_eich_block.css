@@ -64,6 +64,10 @@
     padding: 0 0 0 20px;
 }
 
+.content_text_detailes_contact .new{
+    margin: 0px auto;
+}
+
 .wrapper_form {
     position: relative;
     margin: auto;
