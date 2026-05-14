@@ -153,6 +153,10 @@
     letter-spacing: 1.5px;
 }
 
+.ogr_width {
+    width: 500px;
+}
+
 /* Контейнер для группы радиокнопок и чекбоксов (вертикально, слева) */
 .radio-group, .checkbox-group {
     display: flex;
