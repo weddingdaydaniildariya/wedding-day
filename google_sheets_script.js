@@ -2,7 +2,7 @@
 
 
 // URL вашего Google Apps Script (замените на свой)
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzn5nguaXo1Qz8hsHy_QTeLFvPk2wKwAHsc4oRUdKr_CqXOd96GCuUUaQ-Dcf0q7P_DXw/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx3_NADXSgNcw0ObB4UzSx1Q-r456vhxj1q60JfarZtp7JXu8uHiq20cO33nhzIZtFTKQ/exec';
 
 // Ждём полной загрузки HTML перед выполнением скрипта
 document.addEventListener('DOMContentLoaded', function() {
@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const attendanceYes = document.getElementById('attendanceYes');
     const attendanceNo = document.getElementById('attendanceNo');
     const submitBtn = document.getElementById('submitBtn');
+    const allergiInput = document.getElementById('allergi');
     
     // Получаем все чекбоксы напитков
     const drinkCognac = document.getElementById('drinkCognac');
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function getFormData() {
         // Получаем имя
         const name = userNameInput ? userNameInput.value.trim() : '';
+        const allergi = allergiInput ? allergiInput.value.trim() : '';
         
         // Получаем выбранный вариант присутствия
         let attendance = '';
@@ -51,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (drinkWater && drinkWater.checked) drinks.push('Самогон');
         if (drinkGaz && drinkGaz.checked) drinks.push('Сок/Газировка');
         
-        return { name, attendance, drinks };
+        return { name, attendance, drinks, allergi };
     }
     
     // Проверка заполнения формы
@@ -63,6 +65,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         if (!data.attendance) {
             alert('Пожалуйста, выберите, будете ли вы присутствовать');
+            return false;
+        }
+        if (!data.allergi) {
+            alert('Если у вас нет аллергии, пожалуйста напишите "нет"');
+            if (allergiInput) allergiInput.focus();
             return false;
         }
         return true;
@@ -79,7 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
             body: JSON.stringify({
                 name: data.name,
                 attendance: data.attendance,
-                drinks: data.drinks
+                drinks: data.drinks,
+                allergi: data.allergi
             })
         });
         return response;
@@ -88,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Очистка формы после отправки
     function clearForm() {
         if (userNameInput) userNameInput.value = '';
+        if (allergiInput) allergiInput.value = '';
         if (attendanceYes) attendanceYes.checked = false;
         if (attendanceNo) attendanceNo.checked = false;
         if (drinkCognac) drinkCognac.checked = false;

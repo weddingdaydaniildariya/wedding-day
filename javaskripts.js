@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
             introOverlay.style.display = 'none';
         }, 800);
+
     }
     
     // Обработчик нажатия на кнопку

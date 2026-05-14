@@ -124,12 +124,14 @@
     white-space: nowrap;
 }
 
-.card_img_jule {
+/* .card_img_jule {
     opacity: 0;
     transform: translateX(100px);
     transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
                 transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-    will-change: opacity, transform; 
+    will-change: opacity, transform;
+    display: none;
+
 }
 
 .card_img_calendar {
@@ -138,10 +140,11 @@
     transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
                 transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     will-change: opacity, transform; 
-}
+    display: none;
+} */
 
 /* Начальное состояние элементов (скрыты и смещены вниз) */
-.timer_text, .timer-container {
+.timer_text, .timer-container, .card_img_jule, .card_img_calendar {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 

@@ -138,10 +138,6 @@
     margin: 0 25px;
 }
 
-.container_for_text {
-
-}
-
 .img_text_program {
     width: 300px;
 }
@@ -182,8 +178,10 @@
 @media (max-width: 480px) {
 
     .card_our_day {
-        width: 280px;
-        font-size: 10px;
+        width: 300px;
+        font-size: 11px;
+        letter-spacing: 1px;
+        line-height: 18px;
     }
 
     .img_text_program {

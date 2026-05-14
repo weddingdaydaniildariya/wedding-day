@@ -64,8 +64,13 @@
     padding: 0 0 0 20px;
 }
 
-.content_text_detailes_contact .new{
+.no_margin {
     margin: 0px auto;
+}
+
+.div_for_img_heart_contact {
+    display: flex;
+    justify-content: center;
 }
 
 .wrapper_form {
@@ -119,6 +124,7 @@
     font-family: Angst, serif;
     color: #FFFDF8;
     backdrop-filter: blur(4px);
+    letter-spacing: 2px;
 }
 
 .name-input:focus {
@@ -266,9 +272,6 @@
     .input-name-wrapper {
         width: 400px;
     }
-    .checkbox-label-title {
-        font-size: 1rem;
-    }
     .radio-item, .checkbox-item {
         font-size: 1.1rem;
         gap: 20px;
@@ -282,6 +285,7 @@
         width: 350px;
         line-height: 20px;
         letter-spacing: 3px;
+        font-size: 1rem;
     }
 
     .content_text_detailes_contact {
@@ -295,7 +299,20 @@
 @media (max-width: 480px) {
 
     .input-name-wrapper {
-        width: 350px;
+        width: 100%;
+    }
+
+    .checkbox-label-title {
+        width: 330px;
+        line-height: 20px;
+        letter-spacing: 2px;
+        font-size: 14px;
+    }
+
+    .radio-item, .checkbox-item {
+        font-size: 0.8rem;
+        gap: 15px;
+        margin-top: 8px;
     }
 
     .content_text_detailes_contact {
@@ -311,7 +328,7 @@
 @media (max-width: 400px) {
 
     .input-name-wrapper {
-        width: 300px;
+        width: 100%;
     }
 
     .checkbox-label-title {

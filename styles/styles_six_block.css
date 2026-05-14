@@ -93,6 +93,9 @@
 .six_block.animate-in .content_text_detailes { 
     transition-delay: 1.0s; 
 }
+.six_block.animate-in .delay_new { 
+    transition-delay: 1.3s; 
+}
 
 
 
@@ -126,7 +129,10 @@
         width: 300px;
         font-size: 12px;
         padding: 0 0 0 5px;
-        line-height: 20px;
+        line-height: 17px;
+    }
+    .delay_new {
+        font-size: 11px;
     }
 
     .card_img_location_torgestva {
